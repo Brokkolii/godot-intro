@@ -10,10 +10,12 @@ radius = 52.0
 script = ExtResource("1_n8u48")
 
 [node name="PlayerImage" type="Sprite2D" parent="."]
-position = Vector2(0, -38)
+position = Vector2(48, -19)
+rotation = 1.5708
 texture = ExtResource("1_kct04")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -24)
 shape = SubResource("CircleShape2D_0oule")
 
 [node name="CanLaserTimer" type="Timer" parent="."]
@@ -27,24 +29,24 @@ one_shot = true
 [node name="LaserStartPositions" type="Node2D" parent="."]
 
 [node name="Marker2D" type="Marker2D" parent="LaserStartPositions"]
-position = Vector2(20, -133)
+position = Vector2(145, 0)
 
 [node name="Marker2D2" type="Marker2D" parent="LaserStartPositions"]
-position = Vector2(12, -130)
+position = Vector2(144, -6)
 
 [node name="Marker2D3" type="Marker2D" parent="LaserStartPositions"]
-position = Vector2(29, -130)
+position = Vector2(143, 8)
 
 [node name="GrenadeStartPosition" type="Node2D" parent="."]
 
 [node name="Marker2D" type="Marker2D" parent="GrenadeStartPosition"]
-position = Vector2(20, -133)
+position = Vector2(61, -60)
 
 [node name="Marker2D2" type="Marker2D" parent="GrenadeStartPosition"]
-position = Vector2(12, -130)
+position = Vector2(57, -71)
 
 [node name="Marker2D3" type="Marker2D" parent="GrenadeStartPosition"]
-position = Vector2(29, -130)
+position = Vector2(57, -49)
 
 [connection signal="timeout" from="CanLaserTimer" to="." method="_on_can_laser_timer_timeout"]
 [connection signal="timeout" from="CanGrenadeTimer" to="." method="_on_can_grenade_timer_timeout"]
