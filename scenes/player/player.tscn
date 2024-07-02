@@ -15,3 +15,36 @@ texture = ExtResource("1_kct04")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_0oule")
+
+[node name="CanLaserTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="CanGrenadeTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="LaserStartPositions" type="Node2D" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="LaserStartPositions"]
+position = Vector2(20, -133)
+
+[node name="Marker2D2" type="Marker2D" parent="LaserStartPositions"]
+position = Vector2(12, -130)
+
+[node name="Marker2D3" type="Marker2D" parent="LaserStartPositions"]
+position = Vector2(29, -130)
+
+[node name="GrenadeStartPosition" type="Node2D" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="GrenadeStartPosition"]
+position = Vector2(20, -133)
+
+[node name="Marker2D2" type="Marker2D" parent="GrenadeStartPosition"]
+position = Vector2(12, -130)
+
+[node name="Marker2D3" type="Marker2D" parent="GrenadeStartPosition"]
+position = Vector2(29, -130)
+
+[connection signal="timeout" from="CanLaserTimer" to="." method="_on_can_laser_timer_timeout"]
+[connection signal="timeout" from="CanGrenadeTimer" to="." method="_on_can_grenade_timer_timeout"]
